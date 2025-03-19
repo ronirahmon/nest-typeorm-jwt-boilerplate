@@ -1,0 +1,7 @@
+APP_VERSION = 0.0.1
+DB_HOST = localhost
+DB_USERNAME = user
+DB_PASSWORD = passowrd
+DB_DATABASE = db
+DB_PORT = 1433
+JWT_KEY = 2646294A4
