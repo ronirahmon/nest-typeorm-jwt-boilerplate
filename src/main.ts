@@ -15,8 +15,8 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter({ logger: true }),
   );
-  app.useGlobalPipes(new ValidationPipe())
-  app.enableCors({origin:["localhost"]})
+  app.useGlobalPipes(new ValidationPipe({transform:true, transformOptions:{enableImplicitConversion:true}}))
+  app.enableCors({origin:["http://localhost:3001"]})
   await app.register(compression,  { encodings: ['gzip', 'deflate'] })
   await app.listen(process.env.PORT ?? 3000);
 }

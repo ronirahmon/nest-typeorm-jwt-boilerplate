@@ -21,8 +21,8 @@ constructor(
     return this.userRepository.find();
   }
 
-  async findOne(id: number): Promise<User|null> {
-    return this.userRepository.findOneBy({id});
+  async findOne(id: string): Promise<User|null> {
+    return this.userRepository.findOneBy({});
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
@@ -36,8 +36,8 @@ constructor(
   async findByUserName(username:string):Promise<User|null>{
     let user = await this.userRepository.findOne({
       where:{
-        username,
-      }
+        username : username,
+      }, 
     })
     console.log(user)
     return user

@@ -8,7 +8,9 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { UsersModule } from './users/users.module';
 import { JwtAuthGuard } from './auth/auth.guard';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './users/entities/user.entity';
+import { VendorsModule } from './vendors/vendors.module';
+import { HelpersModule } from './helpers/helpers.module';
+import { CompaniesModule } from './companies/companies.module';
 
 @Module({
   imports: [
@@ -42,6 +44,9 @@ import { User } from './users/entities/user.entity';
         },
       ],
     }),
+    VendorsModule,
+    HelpersModule,
+    CompaniesModule,
   ],
   providers:[
     {provide:APP_INTERCEPTOR, useClass:CacheInterceptor},

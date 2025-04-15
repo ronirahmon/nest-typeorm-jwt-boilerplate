@@ -15,4 +15,21 @@ export class User {
 
     @Column({})
     username:string;
+
+    // @PrimaryColumn({name:"user_id"})
+    // id: string;
+    
+    // @Column()
+    // user_name: string;
+
+    // @Column({name:"user_password"})
+    // @Exclude()
+    // password:string;
+
+    // @Column({})
+    // user_comp:string;
+
+    // @OneToOne(type=>Company )
+    // company: Company
+
 }
